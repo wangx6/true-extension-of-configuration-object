@@ -1,9 +1,10 @@
-var object1 = {
+var config = {
   apple: 0,
   banana: { weight: 52, price: 100 },
   cherry: 97
 };
-var object2 = {
+
+var newConfig = {
     banana: { 
         price: 200, 
         color:'yellow',
@@ -19,8 +20,21 @@ var object2 = {
      durian: 100
 };
 
+/**
+*   Porblem:
+*   common problem to jquery extend function which will over write
+*   configuration if subtree existed
+*
+*   keep all default value and add additional new configs to the it
+*   DO NOT overwrite defaule in the subtree.
+*
+*   @param {object} conf1 -> to be updated
+*   @param {object} conf2 -> new config
+*
+*   return most up to date config settings 
+*/
 
-var extend = function(obj1, obj2){
+var extend = function(conf1, conf2){
     for(var i in obj2){
         if(typeof obj1[i] === 'undefined')
             obj1[i] = obj2[i];
@@ -31,5 +45,7 @@ var extend = function(obj1, obj2){
     }
     return obj1;
 };
-var config = extend( object1, object2 );
+
+// run true extend
+config = extend( config, newConfig );
 console.log(config);
