@@ -21,12 +21,13 @@ var newConfig = {
 };
 
 /**
-*   Porblem:
+*   PROBLEM:
 *   common problem to jquery extend function which will over write
 *   configuration if subtree existed
 *
-*   keep all default value and add additional new configs to the it
-*   DO NOT overwrite defaule in the subtree.
+*   PURPOSE:
+*   keep all default value and add additional new configs to the
+*   default config and NOT overwrite defaule in the subtree.
 *
 *   @param {object} conf1 -> to be updated
 *   @param {object} conf2 -> new config
